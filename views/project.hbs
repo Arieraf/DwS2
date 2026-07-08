@@ -9,25 +9,63 @@
 
 <body>
 
-    <h1>Project Page</h1>
-
-    <a href="/">Home</a>
+    {{!-- <a href="/">Home</a>
     <a href="/contact">Contact</a>
-    <a href="/project">My Project</a>
+    <a href="/project">My Project</a> --}}
 
+    <h1>My Project</h1>
+    <hr>
+    <h2>Add New Project</h2>
+
+    <form action="/project" method="POST">
+    
+        <div>
+            <label>Project Name</label><br>
+            <input type="text" name="projectName">
+        </div>
+
+        <br>
+        <div>
+            <label>Start Date</label><br>
+            <input type="date" name="startDate">
+        </div>
+
+        <br>
+        <div>
+            <label>End Date</label><br>
+            <input type="date" name="projectName">
+        </div>
+
+        <br>
+        <div>
+            <label>image</label><br>
+            <input type="text" name="image">
+        </div>
+    
+        <br>
+        <button type="submit">Add Project</button>
+    
+    </form>
+    <hr>
+
+    <h2>Project list</h2>
 
     {{#each projects}}
-    <div class="card">
-        <h2>{{title}}</h2>
-        <p>{{desciption}}</p>
+    <div>
+        <h3>{{projectName}}</h3>
+        
+        <p>{{startDate}} - {{endDate}}</p>
 
-        {{if isActive}}
-        <span>Status: Active</span>
-        {{else}}
-        <span>Status: inActive</span>
+        {{#if image}}
+            <img src="{{image}}" width="200">
         {{/if}}
-
+        <br>
+        <a href="/project/{{id}}">Detail</a>
+        <a href="/project/edit/{{id}}">Edit</a>
+        <a href="/project/delete/{{id}}">Delete</a>
+        <br>
     </div>
+    <hr>
     {{/each}}
 
 </body>

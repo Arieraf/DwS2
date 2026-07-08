@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Detail</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Project Detail</h1>
+    <hr>
+    <h2>{{project.projectName}}</h2>
+    <p>
+        {{project.startDate}}
+        -
+        {{project.endDate}}
+    </p>
+
+    {{#if project.image}}
+        <img src="{{project.image}}" width="300">
+    {{/if}}
+
+    <br>
+    <a href="/project">Back</a>
+
+</body>
+
+
+</html>
