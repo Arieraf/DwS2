@@ -9,64 +9,203 @@
 
 <body>
 
-    {{!-- <a href="/">Home</a>
-    <a href="/contact">Contact</a>
-    <a href="/project">My Project</a> --}}
 
-    <h1>My Project</h1>
-    <hr>
-    <h2>Add New Project</h2>
+   <nav>
 
-    <form action="/project" method="POST">
-    
-        <div>
-            <label>Project Name</label><br>
-            <input type="text" name="projectName">
-        </div>
+    <h2>My Portfolio</h2>
 
-        <br>
-        <div>
-            <label>Start Date</label><br>
-            <input type="date" name="startDate">
-        </div>
-
-        <br>
-        <div>
-            <label>End Date</label><br>
-            <input type="date" name="projectName">
-        </div>
-
-        <br>
-        <div>
-            <label>image</label><br>
-            <input type="text" name="image">
-        </div>
-    
-        <br>
-        <button type="submit">Add Project</button>
-    
-    </form>
-    <hr>
-
-    <h2>Project list</h2>
-
-    {{#each projects}}
     <div>
-        <h3>{{projectName}}</h3>
-        
-        <p>{{startDate}} - {{endDate}}</p>
 
-        {{#if image}}
-            <img src="{{image}}" width="200">
-        {{/if}}
-        <br>
-        <a href="/project/{{id}}">Detail</a>
-        <a href="/project/edit/{{id}}">Edit</a>
-        <a href="/project/delete/{{id}}">Delete</a>
-        <br>
+        <a href="/">Home</a>
+
+        <a href="/contact">Contact</a>
+
+        <a href="/project">My Project</a>
+
     </div>
+
+</nav>
+
+<section class="profile-section">
+
+    <div class="profile-image">
+
+        <img
+            src="/foto/profile.jpeg"
+            alt="Profile"
+        >
+
+    </div>
+
+    <div class="profile-content">
+
+        <h1>
+            Hi, Saya Tian
+        </h1>
+
+        <h3>
+            Full Stack Developer
+        </h3>
+
+        <p class="profile-description">
+
+            Saya adalah seorang Full Stack Developer yang sedang
+            mempelajari Express.js, Node.js, dan Handlebars.
+            Saya memiliki ketertarikan dalam membangun aplikasi web
+            dari sisi frontend maupun backend, serta terus belajar
+            mengembangkan proyek-proyek yang modern dan responsif.
+
+        </p>
+
+        <p class="location">
+            Indonesia
+        </p>
+
+        <div class="profile-button">
+
+            <a href="/contact" class="btn-primary">
+                Contact Me
+            </a>
+
+            <a href="#" class="btn-secondary">
+                Download CV
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<hr>
+
+<h2>Add Project</h2>
+
+
+<hr>
+
+<section class="project-form">
+
+    <div class="form-card">
+
+        <h2>Add New Project</h2>
+
+        <p class="form-description">
+            Tambahkan project yang telah kamu kerjakan.
+            Informasi yang diisi akan ditampilkan pada daftar project di bawah.
+        </p>
+
+        <form action="/project" method="POST">
+
+            <div class="input-group">
+                <label>Project Name</label>
+                <input
+                    type="text"
+                    name="projectName"
+                    placeholder="Masukkan nama project"
+                >
+            </div>
+
+            <div class="date-group">
+
+                <div class="input-group">
+                    <label>Start Date</label>
+                    <input
+                        type="date"
+                        name="startDate"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>End Date</label>
+                    <input
+                        type="date"
+                        name="endDate"
+                    >
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <label>Image URL</label>
+                <input
+                    type="text"
+                    name="image"
+                    placeholder="https://..."
+                >
+            </div>
+
+            <button type="submit" class="btn-submit">
+                Add Project
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
     <hr>
-    {{/each}}
+<section class="project-list">
+
+    <h2>Latest Projects</h2>
+
+    <p class="project-subtitle">
+        Berikut beberapa project yang telah ditambahkan.
+    </p>
+
+    <div class="project-grid">
+
+        {{#each projects}}
+
+        <div class="project-card">
+
+            {{#if image}}
+                <img
+                    src="{{image}}"
+                    alt="{{projectName}}"
+                    class="project-image"
+                >
+            {{else}}
+                <img
+                    src="https://placehold.co/600x350"
+                    alt="No Image"
+                    class="project-image"
+                >
+            {{/if}}
+
+            <div class="project-content">
+
+                <h3>{{projectName}}</h3>
+
+                <p class="project-date">
+                    {{startDate}} - {{endDate}}
+                </p>
+
+                <div class="project-action">
+
+                    <a href="/project/{{id}}">
+                        Detail
+                    </a>
+
+                    <a href="/project/edit/{{id}}">
+                        Edit
+                    </a>
+
+                    <a href="/project/delete/{{id}}">
+                        Delete
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {{/each}}
+
+    </div>
+
+</section>
 
 </body>
 

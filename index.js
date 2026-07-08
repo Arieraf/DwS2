@@ -33,6 +33,7 @@ app.get("/project", (req, res) => {
 });
 
 app.post ("/project", (req, res)=>{
+  console.log(projects);
   const {
     projectName,
     startDate,
@@ -49,7 +50,7 @@ app.post ("/project", (req, res)=>{
   };
 
   projects.push(project);
-  
+
   res.redirect("/project");
 });
 

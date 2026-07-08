@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Project</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <section class="project-form">
+
+        <div class="form-card">
+
+            <h2>Edit Project</h2>
+
+            <form action="/project/edit/{{project.id}}" method="POST">
+
+                <div class="input-group">
+                    <label>Project Name</label>
+                    <input
+                        type="text"
+                        name="projectName"
+                        value="{{project.projectName}}"
+                    >
+                </div>
+
+                <div class="date-group">
+
+                    <div class="input-group">
+                        <label>Start Date</label>
+                        <input
+                            type="date"
+                            name="startDate"
+                            value="{{project.startDate}}"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>End Date</label>
+                        <input
+                            type="date"
+                            name="endDate"
+                            value="{{project.endDate}}"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+                    <label></label>
+                    <input
+                        type="text"
+                        name="image"
+                        value="{{project.image}}"
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn-submit"
+                >
+                    Update Project
+                </button>
+
+            </form>
+
+            <br>
+
+            <a href="/project">
+                ← Back to Project
+            </a>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
