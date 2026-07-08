@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs"); 
+const { title } = require("process");
+const { deserialize } = require("v8");
 
 const app = express();
 const port = 3000;
@@ -23,7 +25,13 @@ app.get("/contact", (req, res) => {
 });
 
 app.get("/project", (req, res) => {
-  res.render("project");
+  const projects = [
+    {id: 1, title: 'Project A', description: 'Description A'},
+    {id: 2, title: 'Project B', description: 'Description B'},
+    {id: 3, title: 'Project C', description: 'Description C'},
+  ];
+
+  res.render("project", {projects});
 });
 
 

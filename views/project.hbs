@@ -4,7 +4,7 @@
 <head>
     <title>My Project</title>
 
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -14,6 +14,21 @@
     <a href="/">Home</a>
     <a href="/contact">Contact</a>
     <a href="/project">My Project</a>
+
+
+    {{#each projects}}
+    <div class="card">
+        <h2>{{title}}</h2>
+        <p>{{desciption}}</p>
+
+        {{if isActive}}
+        <span>Status: Active</span>
+        {{else}}
+        <span>Status: inActive</span>
+        {{/if}}
+
+    </div>
+    {{/each}}
 
 </body>
 
