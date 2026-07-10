@@ -15,14 +15,14 @@
 
             <h2>Edit Project</h2>
 
-            <form action="/project/edit/{{project.id}}" method="POST">
+            <form action="/project/edit/{{project.id_projects}}" method="post">
 
                 <div class="input-group">
                     <label>Project Name</label>
                     <input
                         type="text"
-                        name="projectName"
-                        value="{{project.projectName}}"
+                        name="project_name"
+                        value="{{project.project_name}}"
                     >
                 </div>
 
@@ -32,8 +32,8 @@
                         <label>Start Date</label>
                         <input
                             type="date"
-                            name="startDate"
-                            value="{{project.startDate}}"
+                            name="start_date"
+                            value="{{project.start_date}}"
                         >
                     </div>
 
@@ -41,8 +41,8 @@
                         <label>End Date</label>
                         <input
                             type="date"
-                            name="endDate"
-                            value="{{project.endDate}}"
+                            name="end_date"
+                            value="{{project.end_date}}"
                         >
                     </div>
 
@@ -55,6 +55,12 @@
                         name="image"
                         value="{{project.image}}"
                     >
+                </div>
+
+                <div class="input-group">
+                    <label>Description</label>
+
+                    <textarea name="description">{{project.description}}</textarea>
                 </div>
 
                 <button

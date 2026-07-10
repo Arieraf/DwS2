@@ -255,3 +255,24 @@ nav div a{
 .project-action a:hover{
     background:#374151;
 }
+
+/* flash */
+.flash {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid;
+    font-weight: 500;
+}
+
+.flash.success {
+    background: #d1fae5;
+    border-color: #10b981;
+    color: #065f46;
+}
+
+.flash.error {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}

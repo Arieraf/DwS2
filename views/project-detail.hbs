@@ -9,11 +9,15 @@
 <body>
     <h1>Project Detail</h1>
     <hr>
-    <h2>{{project.projectName}}</h2>
+    <h2>{{project.project_name}}</h2>
     <p>
-        {{project.startDate}}
+        {{project.start_date}}
         -
-        {{project.endDate}}
+        {{project.end_date}}
+    </p>
+
+    <p>
+        {{project.description}}
     </p>
 
     {{#if project.image}}
